@@ -175,7 +175,63 @@
   .acc { position:absolute; top:-17px; right:-17px; background:var(--yellow); color:#000; font-family:'Bebas Neue',sans-serif; font-size:30px; width:72px; height:72px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-direction:column; line-height:1; }
   .acc small { font-size:9px; font-family:'Space Mono',monospace; font-weight:700; }
 
-  .contact { background:var(--bg); }
+  /* ── CERTIFICATIONS ── */
+  .certs { background:var(--bg); }
+  .cert-row {
+    display:grid;
+    grid-template-columns:44px 1fr auto;
+    align-items:center;
+    gap:28px;
+    padding:26px 0;
+    border-bottom:1px solid var(--border);
+    transition:border-color 0.2s;
+  }
+  .cert-row:first-child { border-top:1px solid var(--border); }
+  .cert-row:hover .cert-num { color:var(--yellow); }
+  .cert-row:hover .cert-title { color:var(--yellow); }
+  .cert-num {
+    font-family:'Space Mono',monospace;
+    font-size:11px; color:#333;
+    font-weight:700; letter-spacing:1px;
+    transition:color 0.2s;
+  }
+  .cert-info { display:flex; flex-direction:column; gap:6px; }
+  .cert-meta { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .cert-issuer-tag {
+    font-family:'Space Mono',monospace;
+    font-size:9px; font-weight:700; letter-spacing:1.5px;
+    text-transform:uppercase; color:#000;
+    background:var(--yellow); padding:3px 8px; border-radius:1px;
+  }
+  .cert-date {
+    font-family:'Space Mono',monospace;
+    font-size:10px; color:var(--gray);
+    letter-spacing:1px; text-transform:uppercase;
+  }
+  .cert-title {
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(22px,3vw,36px);
+    letter-spacing:0.5px; color:var(--white);
+    line-height:1; transition:color 0.2s;
+  }
+  .cert-sub {
+    font-family:'Space Mono',monospace;
+    font-size:10px; color:#444;
+    letter-spacing:1px; text-transform:uppercase;
+  }
+  .cert-dl {
+    font-family:'Space Mono',monospace;
+    font-size:10px; font-weight:700;
+    letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--gray); text-decoration:none;
+    border:1px solid var(--border);
+    padding:10px 18px; border-radius:2px;
+    transition:border-color 0.2s, color 0.2s;
+    white-space:nowrap; cursor:none;
+  }
+  .cert-dl:hover { border-color:var(--yellow); color:var(--yellow); }
+
+  .contact { background:var(--bg2); }
   .cg { display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start; }
   .ci h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(46px,6vw,82px); line-height:0.9; letter-spacing:-1px; margin-bottom:20px; }
   .ci h2 .y { color:var(--yellow); }
@@ -218,6 +274,9 @@
     .sg-grid { grid-template-columns:1fr 1fr; }
     .proc-g { grid-template-columns:1fr 1fr; }
     .fr { grid-template-columns:1fr; }
+    .cert-row { grid-template-columns:1fr; gap:10px; }
+    .cert-num { display:none; }
+    .cert-dl { align-self:flex-start; }
     footer { flex-direction:column; gap:16px; text-align:center; }
   }
 </style>
@@ -234,6 +293,7 @@
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#services">Services</a>
+    <a href="#certifications">Certs</a>
     <a href="#contact">Contact</a>
   </div>
   <a href="#contact" class="nav-cta">Hire Me</a>
@@ -257,7 +317,7 @@
       <div class="spin-ring"></div>
       <div class="photo-circle">
         <div class="ph-ico">📸</div>
-        <div class="ph-txt"><img src="your-photo.jpg" alt="Samarth Gupta"></div>
+        <div class="ph-txt">Your photo here</div>
       </div>
     </div>
     <div class="stat-card"><div class="n">6+</div><div class="l">ML Projects</div></div>
@@ -422,6 +482,52 @@
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section class="certs" id="certifications">
+  <div class="sl">Credentials</div>
+  <div class="st">Certifi<span class="y">cations</span></div>
+
+  <div class="cert-row rv">
+    <span class="cert-num">01</span>
+    <div class="cert-info">
+      <div class="cert-meta">
+        <span class="cert-issuer-tag">Udemy</span>
+        <span class="cert-date">Aug 2025 · 14 hrs</span>
+      </div>
+      <div class="cert-title">Master Generative AI &amp; AI Tools</div>
+      <div class="cert-sub">ChatGPT &amp; more · Cert: UC-bd720e1a</div>
+    </div>
+    <a href="1774260491067_UC-bd720e1a-64f4-4c69-87d8-cab95cb8293d.pdf" download="Samarth_GenAI_Certificate.pdf" target="_blank" class="cert-dl">Download ↓</a>
+  </div>
+
+  <div class="cert-row rv">
+    <span class="cert-num">02</span>
+    <div class="cert-info">
+      <div class="cert-meta">
+        <span class="cert-issuer-tag">Coursera</span>
+        <span class="cert-date">Apr 2024 · University of Minnesota</span>
+      </div>
+      <div class="cert-title">Software Dev Processes &amp; Methodologies</div>
+      <div class="cert-sub">Verify: LMAZJYYGAJVJ</div>
+    </div>
+    <a href="Coursera_Software_Methadologies.pdf" download="Samarth_SoftwareDev_Certificate.pdf" target="_blank" class="cert-dl">Download ↓</a>
+  </div>
+
+  <div class="cert-row rv">
+    <span class="cert-num">03</span>
+    <div class="cert-info">
+      <div class="cert-meta">
+        <span class="cert-issuer-tag">Microsoft</span>
+        <span class="cert-date">Mar 2024 · Coursera</span>
+      </div>
+      <div class="cert-title">Cybersecurity Threat Vectors &amp; Mitigation</div>
+      <div class="cert-sub">Verify: FTQPF6BEDTUQ</div>
+    </div>
+    <a href="cybersecurity.pdf" download="Samarth_Cybersecurity_Certificate.pdf" target="_blank" class="cert-dl">Download ↓</a>
+  </div>
+
+</section>
+
 <section class="contact" id="contact">
   <div class="cg">
     <div class="ci rv">
@@ -469,7 +575,6 @@
 </footer>
 
 <script>
-  // ── Cursor ──
   var cur  = document.getElementById('cursor');
   var ring = document.getElementById('cursor-ring');
   var mx = 0, my = 0, rx = 0, ry = 0;
@@ -490,7 +595,6 @@
   }
   tick();
 
-  // ── Contact Form ──
   document.getElementById('f-btn').addEventListener('click', function() {
     var name    = document.getElementById('f-name').value.trim();
     var email   = document.getElementById('f-email').value.trim();
@@ -500,11 +604,11 @@
     var btn     = document.getElementById('f-btn');
 
     function show(msg, ok) {
-      status.style.display     = 'block';
-      status.style.background  = ok ? 'rgba(212,240,0,0.08)' : 'rgba(255,60,60,0.1)';
-      status.style.border      = ok ? '1px solid rgba(212,240,0,0.3)' : '1px solid rgba(255,60,60,0.3)';
-      status.style.color       = ok ? '#d4f000' : '#ff6060';
-      status.textContent       = msg;
+      status.style.display    = 'block';
+      status.style.background = ok ? 'rgba(212,240,0,0.08)' : 'rgba(255,60,60,0.1)';
+      status.style.border     = ok ? '1px solid rgba(212,240,0,0.3)' : '1px solid rgba(255,60,60,0.3)';
+      status.style.color      = ok ? '#d4f000' : '#ff6060';
+      status.textContent      = msg;
     }
 
     if (!name || !email || !message) {
@@ -542,7 +646,6 @@
     });
   });
 
-  // ── Scroll Reveal ──
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) {
